@@ -24,7 +24,7 @@ namespace VehicleServices
         [OperationContract]
         Vehicle getVehicleById(String id);
 
-        [WebInvoke(Method = "PUT", UriTemplate = "/updatevehicles")]
+        [WebInvoke(Method = "PUT", UriTemplate = "/updatevehicles", RequestFormat = WebMessageFormat.Json)]
         [OperationContract]
         void UpdateVehicle(Vehicle vehicle);
 
@@ -36,17 +36,17 @@ namespace VehicleServices
         [OperationContract]
         void DeleteVehicle( String id);
 
-        [WebGet(UriTemplate = "/vehicles/model/{model}/make/{make}", ResponseFormat = WebMessageFormat.Json)]
-        [OperationContract]
-        List<Vehicle> GetVehicleByMakeModel(string model, string make);
+        //[WebGet(UriTemplate = "/vehicles/model/{model}/make/{make}", ResponseFormat = WebMessageFormat.Json)]
+        //[OperationContract]
+        //List<Vehicle> GetVehicleByMakeModel(string model, string make);
 
-        [WebGet(UriTemplate = "/vehicles/model/{model}/year/{year}", ResponseFormat = WebMessageFormat.Json)]
-        [OperationContract]
-        List<Vehicle> GetVehicleByModelYear(string model, string year);
+        //[WebGet(UriTemplate = "/vehicles/model/{model}/year/{year}", ResponseFormat = WebMessageFormat.Json)]
+        //[OperationContract]
+        //List<Vehicle> GetVehicleByModelYear(string model, string year);
 
-        [WebGet(UriTemplate = "/vehicles/make/{make}/year/{year}", ResponseFormat = WebMessageFormat.Json)]
-        [OperationContract]
-        List<Vehicle> GetVehicleByMakeYear(string make, string year);
+        //[WebGet(UriTemplate = "/vehicles/make/{make}/year/{year}", ResponseFormat = WebMessageFormat.Json)]
+        //[OperationContract]
+        //List<Vehicle> GetVehicleByMakeYear(string make, string year);
         
     }
 }

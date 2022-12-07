@@ -54,22 +54,23 @@ namespace VehicleServices
         }
 
         /*Paramter filter : model,make */
-        public List<Vehicle> GetVehicleByMakeModel(string model, string make)
-        {
-           return vehicleList.FindAll(x => x.Model == model && x.Make == make);
-        }
+        //public List<Vehicle> GetVehicleByMakeModel(string model, string make)
+        //{
+        //    vehicleList= vehicleList.FindAll(x => x.Model == model && x.Make == make);
+        //    return vehicleList;
+        //}
 
-        /*Paramter filter : model,year */
-        public List<Vehicle> GetVehicleByModelYear(string model, string year)
-        {
-            return vehicleList.FindAll(x => x.Model == model && x.Year == Int32.Parse(year));
-        }
+        ///*Paramter filter : model,year */
+        //public List<Vehicle> GetVehicleByModelYear(string model, string year)
+        //{
+        //    return vehicleList.FindAll(x => x.Model == model && x.Year == Int32.Parse(year));
+        //}
 
-        /*Paramter filter : make,year */
-        public List<Vehicle> GetVehicleByMakeYear(string make, string year)
-        {
-            return vehicleList.FindAll(x => x.Make == make && x.Year == Int32.Parse( year));
-        }
+        ///*Paramter filter : make,year */
+        //public List<Vehicle> GetVehicleByMakeYear(string make, string year)
+        //{
+        //    return vehicleList.FindAll(x => x.Make == make && x.Year == Int32.Parse( year));
+        //}
 
         ///*request handling*/
         //public void HandleHttpOptionsRequest()
