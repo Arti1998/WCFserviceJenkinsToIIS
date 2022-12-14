@@ -18,35 +18,52 @@ namespace VehicleServices
 
         [WebGet(UriTemplate = "/vehicles", ResponseFormat = WebMessageFormat.Json)]
         [OperationContract]
-        List<Vehicle> GetVehicle();
+        List<Vehicles> GetVehicle();
 
         [WebGet(UriTemplate = "/vehicles/{id}",ResponseFormat = WebMessageFormat.Json)]
         [OperationContract]
-        Vehicle getVehicleById(String id);
+        List<Vehicles> getVehicleById(String id);
 
         [WebInvoke(Method = "PUT", UriTemplate = "/updatevehicles", RequestFormat = WebMessageFormat.Json)]
         [OperationContract]
-        void UpdateVehicle(Vehicle vehicle);
+        string UpdateVehicle(Vehicle vehicle);
 
-        [WebInvoke(Method = "POST",UriTemplate = "/vehicles", RequestFormat=WebMessageFormat.Json, ResponseFormat=WebMessageFormat.Json)]
+        [WebInvoke(Method = "POST",UriTemplate = "/AddVehicles", RequestFormat=WebMessageFormat.Json)]
         [OperationContract]
-        Vehicle CreateVehicle(Vehicle vehicle);
+        string CreateVehicle(Vehicle vehicle);
 
-        [WebInvoke(Method = "DELETE", UriTemplate = "/vehicles/{id}")]
+        [WebInvoke(Method = "DELETE", UriTemplate = "/RemoveVehicles/{id}")]
         [OperationContract]
-        void DeleteVehicle( String id);
+        string DeleteVehicle(string id);
 
         //[WebGet(UriTemplate = "/vehicles/model/{model}/make/{make}", ResponseFormat = WebMessageFormat.Json)]
         //[OperationContract]
-        //List<Vehicle> GetVehicleByMakeModel(string model, string make);
+        //List<Vehicles> GetVehicleByMakeModel(string model, string make);
 
         //[WebGet(UriTemplate = "/vehicles/model/{model}/year/{year}", ResponseFormat = WebMessageFormat.Json)]
         //[OperationContract]
-        //List<Vehicle> GetVehicleByModelYear(string model, string year);
+        //List<Vehicles> GetVehicleByModelYear(string model, string year);
 
         //[WebGet(UriTemplate = "/vehicles/make/{make}/year/{year}", ResponseFormat = WebMessageFormat.Json)]
         //[OperationContract]
-        //List<Vehicle> GetVehicleByMakeYear(string make, string year);
+        //List<Vehicles> GetVehicleByMakeYear(string make, string year);
         
+    }
+
+    [DataContract]
+    public class Vehicle
+    {
+        //bool boolValue = true;
+        //string stringValue = "Hello ";
+
+        [DataMember]
+        public int Id { get; set; }
+        [DataMember]
+        public int Year { get; set; }
+        [DataMember]
+        public string Make { get; set; }
+        [DataMember]
+        public string Model { get; set; }
+
     }
 }
